@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<title>Radio VAIOIVAIO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">
+textarea  {border-style:none;}
+</style>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+  
+$(document).ready(function () {
+  
+
+$("li").click(function(e){
+           
+           
+          var id = e.target.getAttribute('name');
+
+
+          document.getElementById("articulo").value= ;
+
+
+           });
+});
+</script>
+
+  
+
+
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+  <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <p>Leidas<p>
+  
+  {% for noticia in noticiass%}
+      <li name="{{ noticia['ID']}}"> 
+        {{noticia["TITULO"]}}
+      </li >
+
+
+     
+
+    {% endfor%}
+</div>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Noticias &times;</button>
+  
+<p>por leer<p>
+
+{% for noticia in noticias%}
+
+      <li  name="{{ noticia['ID']}}"> 
+          {{noticia["TITULO"]}}
+      </li >
+      
+      
+
+
+    {% endfor%}
+
+</div>
+
+<div id="main">
+
+<div class="w3-teal">
+  <button id="lopenNav" class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
+  <button id="ropenNav" class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+  <div class="w3-container" align="center">
+    
+  </div>
+</div>
+
+<div class="w3-container" align="center">
+
+<textarea id="articulo" rows="100" cols="100" readonly>
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+
+<script type="text/javascript">
+document.write(lol)  
+
+</script>
+
+</textarea>
+
+
+</div>
+
+</div>
+     
+<script>
+
+
+
+
+
+function art()
+{
+
+
+  document.getElementById("articulo").value = example;
+}
+
+
+
+function openLeftMenu() {
+
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("leftMenu").style.width = "25%";
+  document.getElementById("leftMenu").style.display = "block";
+  document.getElementById("lopenNav").style.display = 'none';
+}
+
+function closeLeftMenu() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("leftMenu").style.display = "none";
+  document.getElementById("lopenNav").style.display = "inline-block";
+}
+
+function openRightMenu() {
+  document.getElementById("main").style.marginRight = "25%";
+  document.getElementById("rightMenu").style.width = "25%";
+  document.getElementById("rightMenu").style.display = "block";
+  document.getElementById("ropenNav").style.display = 'none';
+}
+
+function closeRightMenu() {
+ document.getElementById("main").style.marginRight = "0%";
+  document.getElementById("rightMenu").style.display = "none";
+  document.getElementById("ropenNav").style.display = "inline-block";
+}
+</script>
+     
+</body>
+</html>
